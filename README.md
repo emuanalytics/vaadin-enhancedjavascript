@@ -5,10 +5,10 @@ What is EnhancedJavaScript for vaadin?
 --------------------------------------
 
 EnhancedJavaScriptComponent is a drop-in replacement for `AbstractJavaScriptComponent`. It supports transmission of
-state deltas between the server and client rather than transmitting the entire state object. This drastically reduces
+state deltas between the server and client rather than transmitting the entire state object. This reduces
 the payload size for each component update request/response. It also incorporates and extends the features of
 [JavascriptComponentPlus](https://github.com/akquinet/JavascriptPlusForVaadin/blob/master/README.md) - allowing 
-setting deferred variables to be transmitted from client to server.
+you to set deferred variables to be transmitted from client to server.
 
 Workflow
 --------
@@ -51,6 +51,19 @@ rather than Vaadin's supplied `AbstractJavaScriptComponent`.
 
 Your Javascript state class should extend `com.emuanalytics.vaadin.enhancedjavascript.EnhancedJavaScriptComponentState`
 rather than Vaadin's supplied `AbstractJavaScriptComponentState`.
+
+Other than this, creating a component with EnhancedJavascript is exactly the same as creating an 
+AbstractJavaScriptComponent-based component.
+
+###Extra features
+An additional JavaScript method is provided on your connector object - `getStateDeltas()`. This is designed to be used
+in your `onStateChange` method and returns an object containing just the deltas (the properties that have been updated)
+in response to the state change event.
+
+To set a deferred variable, call the `setDeferredVariable(variableName, value, immediateFlag)` method of your connector.
+This works in the same way as the method provided by [JavascriptComponentPlus](https://github.com/akquinet/JavascriptPlusForVaadin/blob/master/README.md)
+with the added feature of allowing immediate transmission of the change event to the server.
+
 
 Demo
 ----
