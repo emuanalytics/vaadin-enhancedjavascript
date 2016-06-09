@@ -33,7 +33,7 @@ For use in Maven-based projects add the following dependency to your application
 <dependency>
   <groupId>com.emuanalytics</groupId>
   <artifactId>vaadin-enhancedjavascript</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
