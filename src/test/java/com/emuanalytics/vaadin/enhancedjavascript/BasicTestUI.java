@@ -29,7 +29,7 @@ public class BasicTestUI extends org.vaadin.addonhelpers.AbstractTest {
 
     @Override
     public String getDescription() {
-        return "Basic test of JavascriptComponentExtra";
+        return "Basic test of EnhancedJavascriptComponent";
     }
 
     @Override
@@ -84,6 +84,11 @@ public class BasicTestUI extends org.vaadin.addonhelpers.AbstractTest {
         });
         setTitleButton.setId("set-title-button");
 
+        Button setValueRPCButton = new Button("Set Value Via RPC", clickEvent -> {
+            sampleComponent.setValueViaRPC(valueField.getValue());
+        });
+        setValueRPCButton.setId("set-value-rpc-button");
+
         CheckBox immediateCheckbox = new CheckBox("Immediate variable notification");
         immediateCheckbox.addValueChangeListener(e -> {
             sampleComponent.setImmediate(immediateCheckbox.getValue());
@@ -100,6 +105,7 @@ public class BasicTestUI extends org.vaadin.addonhelpers.AbstractTest {
                 valueField,
                 setValueButton,
                 setTitleButton,
+                setValueRPCButton,
                 immediateCheckbox,
                 lastEventField,
                 lastVariableChangeField);

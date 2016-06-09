@@ -29,6 +29,8 @@ public class BasicTestPage {
     private WebElement setValueButton;
     @FindBy(id = "set-title-button")
     private WebElement setTitleButton;
+    @FindBy(id = "set-value-rpc-button")
+    private WebElement setValueRPCButton;
     @FindBy(id = "last-event-field")
     private WebElement lastEventInput;
     @FindBy(id = "last-variable-change-field")
@@ -45,6 +47,15 @@ public class BasicTestPage {
     public void clickSetTitleButton() {
         setTitleButton.click();
     }
+    public void clickSetValueRPCButton() {
+        setValueRPCButton.click();
+    }
+    public void clickComponent() {
+        sampleComponent.findElements(By.cssSelector("input")).get(1).click();
+    }
+    public void clickImmediateCheckboxChecked() {
+        immediateCheckbox.click();
+    }
 
     public String lastEventText()  { return lastEventInput.getAttribute("value"); }
     public String variableChangeText()  { return lastVariableChangeInput.getAttribute("value"); }
@@ -59,14 +70,6 @@ public class BasicTestPage {
 
     public void typeInComponent(String text) {
         sampleComponent.findElements(By.cssSelector("input")).get(0).sendKeys(text);
-    }
-
-    public void clickComponent() {
-        sampleComponent.findElements(By.cssSelector("input")).get(1).click();
-    }
-
-    public void clickImmediateCheckboxChecked() {
-        immediateCheckbox.click();
     }
 
     public BasicTestPage(WebDriver driver) {

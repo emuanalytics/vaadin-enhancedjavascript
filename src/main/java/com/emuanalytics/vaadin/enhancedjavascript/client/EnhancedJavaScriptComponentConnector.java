@@ -28,7 +28,7 @@ import com.vaadin.shared.ui.JavaScriptComponentState;
 public final class EnhancedJavaScriptComponentConnector extends
         AbstractComponentConnector implements HasJavaScriptConnectorHelper {
 
-    private final JavaScriptConnectorHelper helper = new EnhancedJavaScriptConnectorHelper(this) {
+    private final EnhancedJavaScriptConnectorHelper helper = new EnhancedJavaScriptConnectorHelper(this) {
         @Override
         protected void showInitProblem(
                 java.util.ArrayList<String> attemptedNames) {

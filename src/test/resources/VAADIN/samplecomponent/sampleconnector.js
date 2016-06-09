@@ -51,5 +51,10 @@
         immediate = stateDeltas.immediate;
       }
     };
+
+    this.setValueViaRPC = function(value) {
+      widget.setValue(value);
+    };
   };
+
 })(window.samplewidget);

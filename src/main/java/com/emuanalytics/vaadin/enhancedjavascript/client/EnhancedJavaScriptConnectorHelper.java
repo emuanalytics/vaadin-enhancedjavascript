@@ -47,6 +47,7 @@ public class EnhancedJavaScriptConnectorHelper extends JavaScriptConnectorHelper
         return connWrapper;
     }
 
+    @Override
     public void setNativeState(JavaScriptObject state) {
         super.setNativeState(state);
         updateCombinedState(combinedState, stateDeltas, state);

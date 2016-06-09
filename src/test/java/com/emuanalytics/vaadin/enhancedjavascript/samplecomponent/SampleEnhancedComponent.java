@@ -35,6 +35,10 @@ public class SampleEnhancedComponent extends EnhancedJavaScriptComponent {
         getState().title = title;
     }
 
+    public void setValueViaRPC(String title) {
+        callFunction("setValueViaRPC", title);
+    }
+
     @Override
     protected void onChangeVariables(Map<String, Object> variables) {
         String value = (String)variables.get("inputValue");

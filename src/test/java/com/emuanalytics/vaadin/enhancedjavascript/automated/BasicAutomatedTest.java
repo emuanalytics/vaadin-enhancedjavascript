@@ -54,6 +54,13 @@ public class BasicAutomatedTest extends AbstractWebDriverCase {
     }
 
     @Test
+    public void testSetValueViaRPC() {
+        page.setServerValue("test value via RPC");
+        page.clickSetValueRPCButton();
+        assertThat(page.componentInputValue(), is("test value via RPC"));
+    }
+
+    @Test
     public void testClickEvent() {
         page.typeInComponent("testClickEvent");
         page.clickComponent();
@@ -73,4 +80,6 @@ public class BasicAutomatedTest extends AbstractWebDriverCase {
         page.typeInComponent("testVariableChange");
         assertThat(page.variableChangeText(), is("inputValue Changed (value=testVariableChange)"));
     }
+
+
 }
