@@ -13,8 +13,13 @@ you to set deferred variables to be transmitted from client to server.
 Workflow
 --------
 
-To package and install the addon, run "mvn install". This will run tests and install the resulting addon jar
+To package and install the addon, run the following commands. This will run tests and install the resulting addon jar
 in your local Maven repository cache.
+
+```bash
+mvn package -DskipTests=true
+mvn install
+```
 
 To run tests only, run "mvn test".
 
